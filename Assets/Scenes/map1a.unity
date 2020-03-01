@@ -1271,26 +1271,6 @@ PrefabInstance:
       propertyPath: countText
       value: 
       objectReference: {fileID: 1286279754}
-    - target: {fileID: 1022615238940490695, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: weightObstacle
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022615238940490695, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: weightResource
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022615238940490695, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: debugMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3202838460725205346, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: debug_mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4098859518129120615, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1351,8 +1331,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: D31-r
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3202838460725205346, guid: b606527f8af28664a894844f3f526637, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b606527f8af28664a894844f3f526637, type: 3}
 --- !u!1001 &5229371597809290880
 PrefabInstance:

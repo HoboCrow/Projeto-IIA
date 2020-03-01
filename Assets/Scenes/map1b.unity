@@ -1640,41 +1640,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 739697043656762840, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: angleOfSensors
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 739697043656762840, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: rangeOfSensors
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 739697043656762840, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: debug_mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1022615238940490695, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: countText
       value: 
       objectReference: {fileID: 460255704}
-    - target: {fileID: 1022615238940490695, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: weightObstacle
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1022615238940490695, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: weightResource
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3202838460725205346, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: debug_mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4098859518129120615, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1734,11 +1704,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: D31-r
-      objectReference: {fileID: 0}
-    - target: {fileID: 8831919988329666845, guid: b606527f8af28664a894844f3f526637,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b606527f8af28664a894844f3f526637, type: 3}

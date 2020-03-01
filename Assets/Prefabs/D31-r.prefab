@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0a6ac58e2ef4bb184d9c065cbf536b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleOfSensors: 10
-  rangeOfSensors: 10
+  angleOfSensors: 5
+  rangeOfSensors: 30
   strength: 0
   angleToClosestObj: 0
   numObjects: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   weightResource: 1
   resourceValue: 0
   resouceAngle: 0
-  weightObstacle: 0
+  weightObstacle: -0.5
   obstacleValue: 0
   obstacleAngle: 0
 --- !u!1 &8808777386705767494
