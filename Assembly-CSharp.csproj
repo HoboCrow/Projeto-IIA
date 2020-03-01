@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D438AAFB-DFA4-D129-FB3C-21B9E1BB8075}</ProjectGuid>
+    <ProjectGuid>{0AF6BE9A-F694-4D6E-CD14-021B86B8FB68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -71,31 +71,31 @@
     <Compile Include="Assets\Scripts\Utils\ObjectInfo.cs" />
     <Compile Include="Assets\Scripts\Utils\SensorController.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Acer/TP1 Tipo/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/repos/Projeto-IIA/Projeto-IIA/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

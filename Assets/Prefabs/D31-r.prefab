@@ -111,7 +111,7 @@ MonoBehaviour:
   strength: 0
   angleToClosestObj: 0
   numObjects: 0
-  debug_mode: 0
+  debug_mode: 1
 --- !u!1 &3528782872524542113
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +358,9 @@ MonoBehaviour:
   weightResource: 1
   resourceValue: 0
   resouceAngle: 0
+  weightObstacle: 0
+  obstacleValue: 0
+  obstacleAngle: 0
 --- !u!1 &8808777386705767494
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +373,6 @@ GameObject:
   - component: {fileID: 1848594354388107329}
   - component: {fileID: 4065996754215689052}
   - component: {fileID: 1442418158232793967}
-  - component: {fileID: 3202838460725205346}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -464,24 +466,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3965723576953268335}
---- !u!114 &3202838460725205346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8808777386705767494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea0a6ac58e2ef4bb184d9c065cbf536b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angleOfSensors: 10
-  rangeOfSensors: 10
-  strength: 0
-  angleToClosestObj: 0
-  numObjects: 0
-  debug_mode: 0
 --- !u!1 &8831919988329666845
 GameObject:
   m_ObjectHideFlags: 0
