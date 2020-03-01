@@ -42,6 +42,7 @@ public class BlockDetectorScript : MonoBehaviour
 
     public ObjectInfo GetClosestObstacle()
     {
+        // The main difference from ResourceDetector.
         ObjectInfo[] a = (ObjectInfo[])GetVisibleObjects("Wall").ToArray();
         if (a.Length == 0)
         {

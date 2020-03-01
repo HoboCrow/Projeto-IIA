@@ -105,10 +105,8 @@ public class ResourceDetectorScript : MonoBehaviour
         return objectsInformation;
     }
 
-
     private void LateUpdate()
     {
         this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, this.transform.parent.rotation.z * -1.0f);
-
     }
 }
