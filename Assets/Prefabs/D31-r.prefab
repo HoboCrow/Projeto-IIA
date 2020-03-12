@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 2708693024619415137}
   - component: {fileID: 102460468212215210}
   - component: {fileID: 1022615238940490695}
+  - component: {fileID: 2579217944688841623}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -342,7 +343,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3965723576953268335}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a5237eed76e64c3b922c64ee3f5f189, type: 3}
   m_Name: 
@@ -354,6 +355,32 @@ MonoBehaviour:
   timeElapsed: 0
   resourcesDetector: {fileID: 7314612682239532039}
   blockDetector: {fileID: 739697043656762840}
+  debugMode: 1
+  weightResource: 1
+  resourceValue: 0
+  resouceAngle: 0
+  weightObstacle: -0.5
+  obstacleValue: 0
+  obstacleAngle: 0
+--- !u!114 &2579217944688841623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3965723576953268335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6db6ed21e3e29241a0a5c17614ca545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourcesGathered: 0
+  speed: 1
+  countText: {fileID: 0}
+  startTime: 0
+  timeElapsed: 0
+  resourcesDetector: {fileID: 0}
+  blockDetector: {fileID: 0}
   debugMode: 1
   weightResource: 1
   resourceValue: 0

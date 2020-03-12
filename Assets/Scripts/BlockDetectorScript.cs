@@ -91,7 +91,7 @@ public class BlockDetectorScript : MonoBehaviour
     public virtual float GetGaussianOutput()
     {
         // YOUR CODE HERE
-        throw new NotImplementedException();
+        return (float)Math.Pow(Math.E, -Math.Pow((0.5 * (strength - 0.5)) / 0.12, 2));
     }
 
     public virtual float GetLogaritmicOutput()
