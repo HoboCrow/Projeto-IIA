@@ -22,8 +22,8 @@ public class UnitBehaviour : MonoBehaviour
     void Update()
     {
         angle = detector.GetAngleToClosestObject();
-        if (detector.strength < xMinLim) detector.strength = yMinLim;
-        else if (detector.strength > xMaxLim) detector.strength = yMinLim;
+        if (detector.strength < xMinLim) value = yMinLim;
+        else if (detector.strength > xMaxLim) value = yMinLim;
         else
             switch (function)
             {

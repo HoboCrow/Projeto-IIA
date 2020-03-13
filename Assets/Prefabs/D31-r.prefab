@@ -355,7 +355,7 @@ MonoBehaviour:
   angle: 0
   function: 0
   xMinLim: 0
-  xMaxLim: 1
+  xMaxLim: 0.504
   yMinLim: 0
   yMaxLim: 1
   unit: {fileID: 816468655}

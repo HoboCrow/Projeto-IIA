@@ -51,9 +51,11 @@ public abstract class DetectorScript : MonoBehaviour
         return strength;
     }
 
+    float s = 0.12f;
+    float u = 0.5f;
     public float GetGaussianOutput()
     {
-        return (float)Math.Pow(Math.E, -Math.Pow((0.5 * (strength - 0.5)) / 0.12, 2));
+        return (float)Math.Pow(Math.E, -u*Math.Pow((strength - u) / s, 2));
     }
 
     public float GetLogaritmicOutput()
