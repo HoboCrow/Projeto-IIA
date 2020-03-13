@@ -16,12 +16,12 @@ public class LinearRobotUnitBehaviour : RobotUnit
     {
 
         // get sensor data
-        resouceAngle = resourcesDetector.GetAngleToClosestResource();
+        resouceAngle = resourcesDetector.GetAngleToClosestObject();
         resourceValue = weightResource * resourcesDetector.GetLinearOuput();
         // apply to the ball
         
         // Meta 1 Analogous to the code above, same logic
-        obstacleAngle = blockDetector.GetAngleToClosestObstacle();
+        obstacleAngle = blockDetector.GetAngleToClosestObject();
         obstacleValue = weightObstacle * blockDetector.GetLinearOuput();
         // O weightObstacle will be negative -> agent moves away from the obstacle
         applyForce(resouceAngle, resourceValue); // go towards

@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BlockDetectorScript.cs" />
+    <Compile Include="Assets\Scripts\DetectorScript.cs" />
     <Compile Include="Assets\Scripts\GaussianRobotUnitBehaviour.cs" />
     <Compile Include="Assets\Scripts\LinearRobotUnitBehaviour.cs" />
     <Compile Include="Assets\Scripts\ResourceDetectorScript.cs" />

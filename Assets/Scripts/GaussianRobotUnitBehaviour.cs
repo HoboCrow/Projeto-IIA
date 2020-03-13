@@ -16,14 +16,14 @@ public class GaussianRobotUnitBehaviour : RobotUnit
     {
 
         // get sensor data
-        resouceAngle = resourcesDetector.GetAngleToClosestResource();
+        resouceAngle = resourcesDetector.GetAngleToClosestObject();
         resourceValue = weightResource * resourcesDetector.GetGaussianOutput();
         Debug.Log("Strengh:" + resourcesDetector.GetLinearOuput() + " Gauss: " + resourcesDetector.GetGaussianOutput());
         // apply to the ball
         applyForce(resouceAngle, resourceValue); // go towards
         
         // Meta 1 Analogous to the code above, same logic
-        obstacleAngle = blockDetector.GetAngleToClosestObstacle();
+        obstacleAngle = blockDetector.GetAngleToClosestObject();
         obstacleValue = weightObstacle * blockDetector.GetGaussianOutput();
         // O weightObstacle will be negative -> agent moves away from the obstacle
         applyForce(obstacleAngle, obstacleValue);
