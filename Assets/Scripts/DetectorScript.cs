@@ -57,9 +57,8 @@ public abstract class DetectorScript : MonoBehaviour
     }
 
     public float GetLogaritmicOutput()
-    {
-        // YOUR CODE HERE
-        throw new NotImplementedException();
+    {   if (strength == 0) return float.MaxValue;
+        return  -1*(float)Math.Log(strength);
     }
 
 

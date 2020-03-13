@@ -65,10 +65,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BlockDetectorScript.cs" />
     <Compile Include="Assets\Scripts\DetectorScript.cs" />
-    <Compile Include="Assets\Scripts\GaussianRobotUnitBehaviour.cs" />
-    <Compile Include="Assets\Scripts\LinearRobotUnitBehaviour.cs" />
     <Compile Include="Assets\Scripts\ResourceDetectorScript.cs" />
     <Compile Include="Assets\Scripts\RobotUnit.cs" />
+    <Compile Include="Assets\Scripts\UnitBehaviour.cs" />
     <Compile Include="Assets\Scripts\Utils\CameraController.cs" />
     <Compile Include="Assets\Scripts\Utils\ObjectInfo.cs" />
     <Compile Include="Assets\Scripts\Utils\SensorController.cs" />

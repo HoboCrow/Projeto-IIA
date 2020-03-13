@@ -6,16 +6,12 @@ using UnityEngine.UI;
 
 public class RobotUnit : MonoBehaviour
 {
-   
-
     public int resourcesGathered;
     protected Rigidbody rb;
     public float speed = 1.0f;
     public Text countText;
     public float startTime;
     public float timeElapsed = 0.0f;
-    public ResourceDetectorScript resourcesDetector;
-    public BlockDetectorScript blockDetector;
     private List<Tuple<float, float>> listAngleStr;
     public bool debugMode = true;
     protected int maxObjects = 0;
@@ -31,8 +27,6 @@ public class RobotUnit : MonoBehaviour
         this.startTime = Time.time;
         timeElapsed = Time.time - startTime;
         SetCountText();
-
-
     }
 
     void FixedUpdate()
