@@ -32,15 +32,15 @@ public class UnitBehaviour : MonoBehaviour
             switch (function)
             {
                 case Function.LINEAR:
-                    output = weight * detector.GetLinearOuput();
+                    output =  detector.GetLinearOuput();
                     break;
                 case Function.LOGARITHMIC:
                     if (detector.strength != 0) // TODO: see if needed
-                        output = weight * detector.GetLogaritmicOutput();
+                        output = detector.GetLogaritmicOutput();
                     else output = 0;
                     break;
                 case Function.GAUSSIAN:
-                    output = weight * detector.GetGaussianOutput();
+                    output = detector.GetGaussianOutput();
                     break;
                 default:
                     break;
@@ -49,7 +49,8 @@ public class UnitBehaviour : MonoBehaviour
         if (output < yInferior) output = yInferior;
         else if (output > ySuperior) output = ySuperior; 
 
-        unit.applyForce(angle, output); // go towards
+
+        unit.applyForce(angle, output * weight); // go towards
     }
 
     public enum Function
