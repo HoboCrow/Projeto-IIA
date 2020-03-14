@@ -22,25 +22,24 @@ public class UnitBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         angle = detector.GetAngleToClosestObject();
-        if (detector.strength == 0){
-            output = 0;
+        if (detector.strength == 0)
+        {
+            output = 0; // No activation
             return;
         }
         // Limiares direita e esquerda
-        if (detector.strength < xEsquerda) 
+        if (detector.strength < xEsquerda)
             output = yInferior;
-        else if (detector.strength > xDireita) 
+        else if (detector.strength > xDireita)
             output = yInferior;
         else
             switch (function)
             {
                 case Function.LINEAR:
-                    output =  detector.GetLinearOuput();
+                    output = detector.GetLinearOuput();
                     break;
                 case Function.LOGARITHMIC:
-                    if (detector.strength != 0) // TODO: see if needed
-                        output = detector.GetLogaritmicOutput();
-                    else output = 0;
+                    output = detector.GetLogaritmicOutput();
                     break;
                 case Function.GAUSSIAN:
                     output = detector.GetGaussianOutput();
@@ -50,7 +49,7 @@ public class UnitBehaviour : MonoBehaviour
             }
         // Limiares superior e inferior
         if (output < yInferior) output = yInferior;
-        else if (output > ySuperior) output = ySuperior; 
+        else if (output > ySuperior) output = ySuperior;
 
         GetComponent<RobotUnit>().applyForce(angle, output * weight); // go towards
     }
