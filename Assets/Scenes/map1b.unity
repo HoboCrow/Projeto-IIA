@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657934, g: 0.4964134, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657993, g: 0.49641424, b: 0.5748182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1640,10 +1640,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 816468655, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: countText
       value: 
       objectReference: {fileID: 460255704}
+    - target: {fileID: 816468661, guid: b606527f8af28664a894844f3f526637, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 739697043656762840, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: debug_mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571989119880502172, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4098859518129120615, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: m_LocalPosition.x
