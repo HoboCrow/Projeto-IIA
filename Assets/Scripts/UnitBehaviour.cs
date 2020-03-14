@@ -18,7 +18,7 @@ public class UnitBehaviour : MonoBehaviour
     public float yInferior = 0;
     [Range(0, 1)]
     public float ySuperior = 1f;
-    public RobotUnit unit;
+    //public RobotUnit unit;
     void FixedUpdate()
     {
         angle = detector.GetAngleToClosestObject();
@@ -52,8 +52,7 @@ public class UnitBehaviour : MonoBehaviour
         if (output < yInferior) output = yInferior;
         else if (output > ySuperior) output = ySuperior; 
 
-
-        unit.applyForce(angle, output * weight); // go towards
+        GetComponent<RobotUnit>().applyForce(angle, output * weight); // go towards
     }
 
     public enum Function
