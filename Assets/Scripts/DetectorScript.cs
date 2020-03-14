@@ -12,6 +12,8 @@ public abstract class DetectorScript : MonoBehaviour
     public float angle;
     public int numObjects;
     public bool debug_mode;
+    public Color scanRayColor = Color.cyan;
+    public Color detectRayColor = Color.red;
 
     protected string detectTag = "";
     // Start is called before the first frame update
@@ -86,7 +88,7 @@ public abstract class DetectorScript : MonoBehaviour
 
         for (int i = 0; i * angleOfSensors < 360f; i++)
         {
-            if (debug_mode)Debug.DrawRay(this.transform.position, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd*rangeOfSensors,Color.green);
+            if (debug_mode)Debug.DrawRay(this.transform.position, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd*rangeOfSensors,scanRayColor);
             if (Physics.Raycast(this.transform.position, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd, out hit, rangeOfSensors))
             {
 
@@ -94,7 +96,7 @@ public abstract class DetectorScript : MonoBehaviour
                 {
                     if (debug_mode)
                     {
-                        Debug.DrawRay(this.transform.position, Quaternion.AngleAxis((-angleOfSensors * i), initialTransformUp) * initialTransformFwd * hit.distance, Color.red);
+                        Debug.DrawRay(this.transform.position, Quaternion.AngleAxis((-angleOfSensors * i), initialTransformUp) * initialTransformFwd * hit.distance, detectRayColor);
                     }
                     ObjectInfo info = new ObjectInfo(hit.distance, angleOfSensors * i + 90);
                     objectsInformation.Add(info);

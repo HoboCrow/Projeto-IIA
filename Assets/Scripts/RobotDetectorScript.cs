@@ -20,7 +20,7 @@ public class RobotDetectorScript : DetectorScript
         Vector3 offset = new Vector3(0, -0.5f, 0);
         for (int i = 0; i * angleOfSensors < 360f; i++)
         {
-            if (debug_mode) Debug.DrawRay(this.transform.position+offset, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd * rangeOfSensors, Color.green);
+            if (debug_mode) Debug.DrawRay(this.transform.position+offset, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd * rangeOfSensors, scanRayColor);
             if (Physics.Raycast(this.transform.position+offset, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd, out hit, rangeOfSensors))
             {
 
@@ -28,7 +28,7 @@ public class RobotDetectorScript : DetectorScript
                 {
                     if (debug_mode)
                     {
-                        Debug.DrawRay(this.transform.position+offset, Quaternion.AngleAxis((-angleOfSensors * i), initialTransformUp) * initialTransformFwd * hit.distance, Color.red);
+                        Debug.DrawRay(this.transform.position+offset, Quaternion.AngleAxis((-angleOfSensors * i), initialTransformUp) * initialTransformFwd * hit.distance, detectRayColor);
                     }
                     ObjectInfo info = new ObjectInfo(hit.distance, angleOfSensors * i + 90);
                     objectsInformation.Add(info);
