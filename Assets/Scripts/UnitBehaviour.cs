@@ -22,7 +22,10 @@ public class UnitBehaviour : MonoBehaviour
     void FixedUpdate()
     {
         angle = detector.GetAngleToClosestObject();
-        if (detector.strength == 0) return;
+        if (detector.strength == 0){
+            output = 0;
+            return;
+        }
         // Limiares direita e esquerda
         if (detector.strength < xEsquerda) 
             output = yInferior;
