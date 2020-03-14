@@ -19,7 +19,7 @@ public class UnitBehaviour : MonoBehaviour
     [Range(0, 1)]
     public float ySuperior = 1f;
     public RobotUnit unit;
-    void Update()
+    void FixedUpdate()
     {
         angle = detector.GetAngleToClosestObject();
         if (detector.strength == 0) return;
