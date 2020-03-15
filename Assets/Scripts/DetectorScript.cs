@@ -47,6 +47,10 @@ public abstract class DetectorScript : MonoBehaviour
         return angle;
     }
 
+    public float GetCubicOutput()
+    {
+        return (float)Math.Pow(strength - 0.5, 3);
+    }
 
     public float GetLinearOuput()
     {

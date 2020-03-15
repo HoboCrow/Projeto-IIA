@@ -1,36 +1,43 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitBehaviour : MonoBehaviour
+public class AgressiveUnitBehaviour : UnitBehaviour
 {
-    [Header("Type of sensor:")]
-    public DetectorScript detector;
-    public float weight;
-    public float output;
-    public float angle;
-    public Function function = Function.LINEAR;
-    [Range(0, 1)]
-    public float xEsquerda = 0;
-    [Range(0, 1)]
-    public float xDireita = 1f;
-    [Range(0, 1)]
-    public float yInferior = 0;
-    [Range(0, 1)]
-    public float ySuperior = 1f;
-    //public RobotUnit unit;
+    public bool ignoreThreshold = true;
+    private bool attackMode = false;
+    List<UnitBehaviour> disabledBeahaviours = new List<UnitBehaviour>();
     void FixedUpdate()
     {
         angle = detector.GetAngleToClosestObject();
         if (detector.strength == 0)
         {
+            if (attackMode)
+            {
+                attackMode = false;
+                disabledBeahaviours.ForEach(b => b.enabled = true);
+            }
             output = 0; // No activation
             return;
         }
+
+        if (!attackMode)
+        {
+            attackMode = true;
+            // Disable all other behaviours
+            foreach (var b in GetComponents<UnitBehaviour>())
+            {
+                if (b == this) continue;
+                b.enabled = false;
+                disabledBeahaviours.Add(b);
+            }
+        }
+
         // Limiares direita e esquerda
-        if (detector.strength < xEsquerda)
+        if (!ignoreThreshold && detector.strength < xEsquerda)
             output = yInferior;
-        else if (detector.strength > xDireita)
+        else if (!ignoreThreshold && detector.strength > xDireita)
             output = yInferior;
         else
             switch (function)
@@ -51,16 +58,11 @@ public class UnitBehaviour : MonoBehaviour
                     break;
             }
         // Limiares superior e inferior
-        if (output < yInferior) output = yInferior;
-        else if (output > ySuperior) output = ySuperior;
+        if (!ignoreThreshold &&  output < yInferior) output = yInferior;
+        else if (!ignoreThreshold && output > ySuperior) output = ySuperior;
 
         GetComponent<RobotUnit>().applyForce(angle, output * weight); // go towards
     }
-
-    public enum Function
-    {
-        LINEAR, LOGARITHMIC, GAUSSIAN, CUBIC
-    };
 }
 
 
