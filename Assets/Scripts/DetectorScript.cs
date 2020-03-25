@@ -87,20 +87,22 @@ public abstract class DetectorScript : MonoBehaviour
 
     public virtual List<ObjectInfo> GetVisibleObjects(string objectTag)
     {
+        //Vector3 origin = this.transform.position;
+        Vector3 origin = new Vector3(this.transform.position.x, 0.5f, this.transform.position.z); 
         RaycastHit hit;
         List<ObjectInfo> objectsInformation = new List<ObjectInfo>();
 
         for (int i = 0; i * angleOfSensors < 360f; i++)
         {
-            if (debug_mode)Debug.DrawRay(this.transform.position, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd*rangeOfSensors,scanRayColor);
-            if (Physics.Raycast(this.transform.position, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd, out hit, rangeOfSensors))
+            if (debug_mode)Debug.DrawRay(origin, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd*rangeOfSensors,scanRayColor);
+            if (Physics.Raycast(origin, Quaternion.AngleAxis(-angleOfSensors * i, initialTransformUp) * initialTransformFwd, out hit, rangeOfSensors))
             {
 
                 if (hit.transform.gameObject.CompareTag(objectTag))
                 {
                     if (debug_mode)
                     {
-                        Debug.DrawRay(this.transform.position, Quaternion.AngleAxis((-angleOfSensors * i), initialTransformUp) * initialTransformFwd * hit.distance, detectRayColor);
+                        Debug.DrawRay(origin, Quaternion.AngleAxis((-angleOfSensors * i), initialTransformUp) * initialTransformFwd * hit.distance, detectRayColor);
                     }
                     ObjectInfo info = new ObjectInfo(hit.distance, angleOfSensors * i + 90);
                     objectsInformation.Add(info);

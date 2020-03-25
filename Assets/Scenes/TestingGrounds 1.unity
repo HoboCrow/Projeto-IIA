@@ -1697,7 +1697,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: weight
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: function
@@ -1711,6 +1711,10 @@ PrefabInstance:
       propertyPath: xDireita
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 816468655, guid: b606527f8af28664a894844f3f526637, type: 3}
+      propertyPath: countText
+      value: 
+      objectReference: {fileID: 1286279754}
     - target: {fileID: 816468661, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: m_Enabled
       value: 1

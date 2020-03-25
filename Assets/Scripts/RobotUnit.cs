@@ -77,6 +77,10 @@ public class RobotUnit : MonoBehaviour
         listAngleStr.Add(new Tuple<float, float>(angle, strength));
     }
 
+    public void UpdateText()
+    {
+        this.gameObject.transform.parent.GetComponentInChildren<TextMesh>().text = $"{resourcesGathered}";
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -84,6 +88,12 @@ public class RobotUnit : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             resourcesGathered++;
+            TextMesh tm = this.gameObject.transform.parent.GetComponentInChildren<TextMesh>();
+            if (tm) // só vai ser true para os robos vermelhos
+            {
+                UpdateText();
+                Grow();
+            }
 
         }
         else if (other.gameObject.CompareTag("Deadly"))
@@ -96,8 +106,36 @@ public class RobotUnit : MonoBehaviour
             Debug.Log("Wall touched!! you lost.");
             this.gameObject.transform.parent.gameObject.SetActive(false);
         }
-
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            var otherRU = collision.gameObject.GetComponent<RobotUnit>();
+            if (otherRU == null) return;
+            if (this.resourcesGathered >= 5 && this.resourcesGathered > otherRU.resourcesGathered)
+            {
+                this.resourcesGathered += otherRU.resourcesGathered;
+                UpdateText();
+                Grow(otherRU.resourcesGathered);
+                collision.gameObject.transform.parent.gameObject.SetActive(false);
+            }
+            else if (otherRU.resourcesGathered >= 5 && otherRU.resourcesGathered > this.resourcesGathered)
+            {
+                otherRU.resourcesGathered += this.resourcesGathered;
+                otherRU.UpdateText();
+                otherRU.Grow(this.resourcesGathered);
+                this.gameObject.transform.parent.gameObject.SetActive(false);
+            }
+        }
+    }
 
+    private Vector3 scaleVector = new Vector3(0.1f, 0.1f, 0.1f);
+    public void Grow(int n=1)
+    {
+        // Scale head and body
+        this.transform.localScale += scaleVector*n;
+        this.transform.parent.transform.GetChild(1).transform.localScale += scaleVector*n;
+    }
 }

@@ -677,7 +677,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: function
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: xMaxLim
@@ -689,7 +689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: xDireita
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: ySuperior

@@ -2187,11 +2187,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: yInferior
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: xDireita
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: ySuperior
@@ -2199,15 +2199,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: function
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: xEsquerda
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 816468654, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: weight
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 816468655, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: countText
@@ -2219,11 +2219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 816468661, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: xEsquerda
-      value: 0.4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 816468661, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: yInferior
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 816468661, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: weight
@@ -2231,7 +2231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 816468661, guid: b606527f8af28664a894844f3f526637, type: 3}
       propertyPath: function
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1022615238940490695, guid: b606527f8af28664a894844f3f526637,
         type: 3}

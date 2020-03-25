@@ -11,7 +11,7 @@ public class AgressiveUnitBehaviour : UnitBehaviour
     void FixedUpdate()
     {
         angle = detector.GetAngleToClosestObject();
-        if (detector.strength == 0)
+        if (detector.strength == 0 || GetComponent<RobotUnit>().resourcesGathered < 5)
         {
             if (attackMode)
             {
