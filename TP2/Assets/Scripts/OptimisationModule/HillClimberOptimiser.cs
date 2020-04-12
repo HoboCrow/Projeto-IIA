@@ -18,7 +18,6 @@ public class HillClimberOptimiser : OptimisationAlgorithm
     protected override void Begin()
     {
         CreateFile(fileName);
-        bestSequenceFound = new List<GameObject>();
         // Initialization
         CurrentSolution = GenerateRandomSolution(targets.Count);
         bestCost = Evaluate(CurrentSolution);
