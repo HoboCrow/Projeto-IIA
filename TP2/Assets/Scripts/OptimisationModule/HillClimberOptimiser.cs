@@ -18,11 +18,10 @@ public class HillClimberOptimiser : OptimisationAlgorithm
     protected override void Begin()
     {
         CreateFile(fileName);
+        bestSequenceFound = new List<GameObject>();
         // Initialization
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+        CurrentSolution = GenerateRandomSolution(targets.Count);
+        bestCost = Evaluate(CurrentSolution);
         //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
         base.CurrentNumberOfIterations++;
@@ -30,11 +29,14 @@ public class HillClimberOptimiser : OptimisationAlgorithm
 
     protected override void Step()
     {
-    
-        /* *****************************************
-                        YOUR CODE HERE
-            *****************************************                      
-        */
+        newSolution = GenerateNeighbourSolution(CurrentSolution);
+        int newSolutionCost = Evaluate(newSolution);
+
+        if (newSolutionCost <= bestCost)
+        {
+            CurrentSolution = newSolution;
+            bestCost = newSolutionCost;
+        }
 
         //DO NOT CHANGE THE LINES BELLOW
         AddInfoToFile(fileName, base.CurrentNumberOfIterations, this.Evaluate(base.CurrentSolution), base.CurrentSolution);
