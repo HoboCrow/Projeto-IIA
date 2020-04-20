@@ -38,6 +38,8 @@ public class RandomSearchOptimiser : OptimisationAlgorithm
         if (cost < bestCost)
         {
             base.CurrentSolution = new List<int>(newSolution);
+            // Facilita adquirir os dados de teste
+            BestSequenceIteration = CurrentNumberOfIterations;
             bestCost = cost;
         }
 

@@ -35,6 +35,8 @@ public class HillClimberOptimiser : OptimisationAlgorithm
         {
             CurrentSolution = newSolution;
             bestCost = newSolutionCost;
+            // Para ter dados de ouput
+            BestSequenceIteration = CurrentNumberOfIterations;
         }
 
         //DO NOT CHANGE THE LINES BELLOW

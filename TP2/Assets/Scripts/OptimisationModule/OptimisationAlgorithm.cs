@@ -19,6 +19,8 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
     protected bool TargetSequenceDefined = false;
     protected bool running = false;
     protected List<GameObject> bestSequenceFound;
+    // Adicionado para facilitar coleção dos dados
+    public int BestSequenceIteration { get; set; } = -1;
     protected List<int> CurrentSolution = null;
     protected List<GameObject> targets;
     protected Dictionary<string, Dictionary<string, int>> distanceMatrix;
@@ -216,7 +218,24 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
         return shuffledList;
     }
 
+    public string GetCopyPasteOutput()
+    {
+        return string.Format("CopyPasteHelper [Solution] [Cost] [BestSolution at]\n {0}\t{1}\t{2}",
+                    GetBestSolutionToString(),
+                    GetCost(),
+                    BestSequenceIteration);
+    }
 
+    // Adicionado para facilitar obtenção dos dados
+    public string GetBestSolutionToString()
+    {
+        string temp = "";
+        foreach (GameObject obj in GetBestSequenceFound())
+        {
+            temp += obj.name + ", ";
+        }
+        return temp.Substring(0,temp.Length-2);
+    }
 
     // These methods should be overriden on each specific search algorithm.
     protected abstract void Begin ();

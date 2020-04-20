@@ -52,8 +52,8 @@ public class Agent : MonoBehaviour {
 
 
 
-		Node start_pos = GridMap.instance.NodeFromWorldPoint (transform.position);
-        transform.position = start_pos.worldPosition + new Vector3(0f,0.5f,0f);
+		//Node start_pos = GridMap.instance.NodeFromWorldPoint (transform.position);
+        //transform.position = start_pos.worldPosition + new Vector3(0f,0.5f,0f);
 
 		currentCost = 0;
 		moveToNext = false;
@@ -188,6 +188,8 @@ public class Agent : MonoBehaviour {
 			{
 				targets = TargetOptmisation.GetBestSequenceFound();
 				Debug.Log("Best Solution Found: " + TargetOptmisation.Evaluate(targets));
+				//Debug.Log($"CopyPasteHelper [Solution] [Cost] [BestSolution at]\n {TargetOptmisation.GetBestSolutionToString()}\t{TargetOptmisation.GetCost()}\t{TargetOptmisation.BestSequenceIteration}");
+				Debug.Log(TargetOptmisation.GetCopyPasteOutput());
 				agentRunning = true;
 				UpdateStartTargetPositions();
 				search.StartRunning();
@@ -339,7 +341,7 @@ public class Agent : MonoBehaviour {
 					algorithmFinished = true;
 				}
 			}
-			uniText.text = "D31 - Configuration Final Path Cost: " + TargetOptmisation.GetCost();
+			uniText.text = "D31 - Configuration Final Path Cost: " + TargetOptmisation.GetCost() + " found at iteration: " + TargetOptmisation.BestSequenceIteration;
             string temp = "";
             foreach(GameObject obj in TargetOptmisation.GetBestSequenceFound())
             {
