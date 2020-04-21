@@ -20,7 +20,7 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
     protected bool running = false;
     protected List<GameObject> bestSequenceFound;
     // Adicionado para facilitar coleção dos dados
-    public int BestSequenceIteration { get; set; } = -1;
+    public int BestSequenceIteration { get; set; } = 1;
     protected List<int> CurrentSolution = null;
     protected List<GameObject> targets;
     protected Dictionary<string, Dictionary<string, int>> distanceMatrix;

@@ -10,9 +10,6 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
-# Adicionado para ignorar os Logs gerados pelas simulações
-Assets/Logs
-
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/

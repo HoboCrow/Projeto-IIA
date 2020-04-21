@@ -33,10 +33,11 @@ public class HillClimberOptimiser : OptimisationAlgorithm
 
         if (newSolutionCost <= bestCost)
         {
+            // Para ter dados de ouput
+            if (newSolutionCost < bestCost) // so apontar quando melhora, não quando troca entre equivalentes
+                BestSequenceIteration = CurrentNumberOfIterations;
             CurrentSolution = newSolution;
             bestCost = newSolutionCost;
-            // Para ter dados de ouput
-            BestSequenceIteration = CurrentNumberOfIterations;
         }
 
         //DO NOT CHANGE THE LINES BELLOW

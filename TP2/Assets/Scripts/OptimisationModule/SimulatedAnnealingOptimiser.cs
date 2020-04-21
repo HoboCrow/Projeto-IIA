@@ -65,7 +65,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         switch (SelectedFunction)
         {
             case function.LOG10:
-                newTemp = 1 / (Mathf.Log10(1 + iter));
+                newTemp = logConst / (Mathf.Log10(1 + iter));
                 break;
             case function.GEOMETRIC:
                 newTemp = InitialTemperature * Mathf.Pow(geoConst, iter);
