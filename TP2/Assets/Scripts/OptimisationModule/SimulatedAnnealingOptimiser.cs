@@ -24,6 +24,9 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
     [SerializeField]
     [HideInInspector]
     private float geoConst;
+    [SerializeField]
+    [HideInInspector]
+    private float linearConst;
 
     protected override void Begin()
     {
@@ -50,6 +53,9 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         
         if (newSolutionCost <= CurrentSolutionCost || jumpProb > rand)
         {
+            // Para ter dados de ouput relevantes
+            if (newSolutionCost < CurrentSolutionCost)
+                BestSequenceIteration = CurrentNumberOfIterations;
             CurrentSolution = newSolution;
             CurrentSolutionCost = newSolutionCost;
         }
@@ -73,7 +79,8 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                 newTemp = InitialTemperature * Mathf.Pow(geoConst, iter);
                 break;
             case function.LINEAR:
-                throw new NotImplementedException();
+                newTemp = InitialTemperature - linearConst * iter;
+                break;
             case function.ARITH_GEO:
                 throw new NotImplementedException();
             default:
@@ -89,10 +96,12 @@ public class SimulatedAnnealingOptimiserEditor : Editor
 {
     SerializedProperty logConstProperty;
     SerializedProperty geoConstProperty;
+    SerializedProperty linearConstProperty;
     private void OnEnable()
     {
         logConstProperty = serializedObject.FindProperty("logConst");
         geoConstProperty = serializedObject.FindProperty("geoConst");
+        linearConstProperty = serializedObject.FindProperty("linearConst");
     }
 
     public override void OnInspectorGUI()
@@ -109,6 +118,7 @@ public class SimulatedAnnealingOptimiserEditor : Editor
                 EditorGUILayout.PropertyField(geoConstProperty, new GUIContent("alfa"));
                 break;
             case SimulatedAnnealingOptimiser.function.LINEAR:
+                EditorGUILayout.PropertyField(linearConstProperty, new GUIContent("n"));
                 break;
             case SimulatedAnnealingOptimiser.function.ARITH_GEO:
                 break;
