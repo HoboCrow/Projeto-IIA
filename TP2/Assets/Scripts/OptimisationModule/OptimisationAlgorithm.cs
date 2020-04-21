@@ -151,12 +151,12 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
 
     public void CreateFile(string name)
     {
-        File.WriteAllText(name, "Iteration,Cost,Sequence\n");
+        File.WriteAllText(name, "Iteration\tCost\tSequence\n");
     }
 
     public void CreateFileSA(string name)
     {
-        File.WriteAllText(name, "Iteration,Cost,Temperature,Sequence\n");
+        File.WriteAllText(name, "Iteration\tCost\tTemperature\tSequence\n");
     }
 
     public void AddInfoToFile(string fileName, int iteration, int quality, List<int> solution)
@@ -167,7 +167,7 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
             temp += (solution[i] + 1) + " ";
         }
         temp += solution[solution.Count - 1] + 1;
-        string content = iteration + "," + quality + "," + temp +"\n";
+        string content = iteration + "\t" + quality + "\t" + temp +"\n";
         Debug.Log(content);
         File.AppendAllText(fileName, content);
     }
@@ -180,7 +180,7 @@ public abstract class OptimisationAlgorithm : MonoBehaviour {
             temp += (solution[i] + 1) + " ";
         }
         temp += solution[solution.Count - 1] + 1;
-        string content = iteration + "," + cost + "," + temperature + "," + temp + "\n";
+        string content = iteration + "\t" + cost + "\t" + temperature + "\t" + temp + "\n";
         Debug.Log(content);
         File.AppendAllText(fileName, content);
     }

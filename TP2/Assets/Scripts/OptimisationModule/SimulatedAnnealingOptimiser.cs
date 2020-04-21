@@ -45,8 +45,10 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         int newSolutionCost = Evaluate(newSolution);
 
         float jumpProb = Mathf.Pow((float)System.Math.E, (CurrentSolutionCost - newSolutionCost) / Temperature);
-
-        if (newSolutionCost <= CurrentSolutionCost || jumpProb > UnityEngine.Random.Range(0, 1))
+        float rand = UnityEngine.Random.Range(0f,1f);
+        Debug.Log($"Cost: {CurrentSolutionCost} vs newCost: {newSolutionCost}\n jumpProb: {jumpProb} vs rand:{rand}");
+        
+        if (newSolutionCost <= CurrentSolutionCost || jumpProb > rand)
         {
             CurrentSolution = newSolution;
             CurrentSolutionCost = newSolutionCost;

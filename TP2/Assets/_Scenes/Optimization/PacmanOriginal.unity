@@ -1010,7 +1010,7 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
@@ -1020,12 +1020,22 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: logConst
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: Temperature
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: randomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: MaxNumberOfIterations
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4098859518129120615, guid: b606527f8af28664a894844f3f526637,
         type: 3}
