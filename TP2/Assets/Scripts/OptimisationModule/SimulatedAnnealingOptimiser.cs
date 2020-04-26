@@ -9,7 +9,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
 {
     private List<int> newSolution = null;
     private int CurrentSolutionCost;
-    public enum function { LOG10, GEOMETRIC, LINEAR, ARITH_GEO };
+    public enum function { LOG10, GEOMETRIC, LINEAR, ARITH_GEO, OSC };
     public function SelectedFunction;
     [HideInInspector]
     public float InitialTemperature;
@@ -27,6 +27,15 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
     [SerializeField]
     [HideInInspector]
     private float linearConst;
+    [SerializeField]
+    [HideInInspector]
+    private float oscFreq;
+    [SerializeField]
+    [HideInInspector]
+    private float oscDivConst;
+    [SerializeField]
+    [HideInInspector]
+    private float oscAlfa;
 
     protected override void Begin()
     {
@@ -59,7 +68,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
             CurrentSolution = newSolution;
             CurrentSolutionCost = newSolutionCost;
         }
-
+        
         Temperature = TemperatureSchedule(currTemp: Temperature, iter: CurrentNumberOfIterations);
 
         //DO NOT CHANGE THE LINES BELLOW
@@ -73,7 +82,7 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
         switch (SelectedFunction)
         {
             case function.LOG10:
-                newTemp = logConst / (Mathf.Log(1 + iter,10));
+                newTemp = logConst / (Mathf.Log(1 + iter, 10));
                 break;
             case function.GEOMETRIC:
                 newTemp = InitialTemperature * Mathf.Pow(geoConst, iter);
@@ -83,6 +92,9 @@ public class SimulatedAnnealingOptimiser : OptimisationAlgorithm
                 break;
             case function.ARITH_GEO:
                 throw new NotImplementedException();
+            case function.OSC:
+                newTemp = InitialTemperature * Mathf.Pow(oscAlfa, iter) + (float)(Math.Sin(oscFreq * iter) * iter+iter)/oscDivConst;
+                break;
             default:
                 throw new Exception($"Invalid Temperature function call : enum value {SelectedFunction}. Check if value is set.");
         }
@@ -97,11 +109,17 @@ public class SimulatedAnnealingOptimiserEditor : Editor
     SerializedProperty logConstProperty;
     SerializedProperty geoConstProperty;
     SerializedProperty linearConstProperty;
+    SerializedProperty oscFreqProperty;
+    SerializedProperty oscDivConstProperty;
+    SerializedProperty oscAlfaProperty;
     private void OnEnable()
     {
         logConstProperty = serializedObject.FindProperty("logConst");
         geoConstProperty = serializedObject.FindProperty("geoConst");
         linearConstProperty = serializedObject.FindProperty("linearConst");
+        oscFreqProperty = serializedObject.FindProperty("oscFreq");
+        oscDivConstProperty = serializedObject.FindProperty("oscDivConst");
+        oscAlfaProperty = serializedObject.FindProperty("oscAlfa");
     }
 
     public override void OnInspectorGUI()
@@ -121,6 +139,11 @@ public class SimulatedAnnealingOptimiserEditor : Editor
                 EditorGUILayout.PropertyField(linearConstProperty, new GUIContent("n"));
                 break;
             case SimulatedAnnealingOptimiser.function.ARITH_GEO:
+                break;
+            case SimulatedAnnealingOptimiser.function.OSC:
+                EditorGUILayout.PropertyField(oscAlfaProperty, new GUIContent("a"));
+                EditorGUILayout.PropertyField(oscFreqProperty, new GUIContent("freq"));
+                EditorGUILayout.PropertyField(oscDivConstProperty, new GUIContent("div"));
                 break;
         }
         serializedObject.ApplyModifiedProperties();
