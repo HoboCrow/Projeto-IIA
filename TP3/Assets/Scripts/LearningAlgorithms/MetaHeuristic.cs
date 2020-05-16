@@ -141,7 +141,7 @@ public abstract class MetaHeuristic : MonoBehaviour
         float populationBestBlue = GenerationBestBlue.Fitness;
         bestRed = overallBestRed.ToString();
         bestBlue = overallBestBlue.ToString();
-        report +=  string.Format("{0},{1},{2},{3},{4},{5},{6}\n", generation,populationBestRed,populationBestBlue, PopAvgRed, PopAvgBlue, overallBestRed.Fitness, overallBestBlue.Fitness);
+        report +=  string.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\n", generation,populationBestRed,populationBestBlue, PopAvgRed, PopAvgBlue, overallBestRed.Fitness, overallBestBlue.Fitness);
 		Debug.Log (report);
     }
 
