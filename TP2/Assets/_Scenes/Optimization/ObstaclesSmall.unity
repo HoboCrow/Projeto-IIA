@@ -967,7 +967,7 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: Temperature
-      value: 100
+      value: 1e+10
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
@@ -982,7 +982,7 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: logConst
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
@@ -992,7 +992,12 @@ PrefabInstance:
     - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: randomSeed
-      value: 0
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691899043822393169, guid: b606527f8af28664a894844f3f526637,
+        type: 3}
+      propertyPath: linearConst
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 4098859518129120615, guid: b606527f8af28664a894844f3f526637,
         type: 3}
@@ -1067,7 +1072,7 @@ PrefabInstance:
     - target: {fileID: 5493275552631916647, guid: b606527f8af28664a894844f3f526637,
         type: 3}
       propertyPath: MaxNumberOfIterations
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8831919988329666845, guid: b606527f8af28664a894844f3f526637,
         type: 3}
