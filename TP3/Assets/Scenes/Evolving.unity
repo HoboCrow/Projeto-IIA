@@ -332,7 +332,7 @@ MonoBehaviour:
   simulating: 0
   simulationPrefab: {fileID: 1790891761437960923, guid: 2a65700acbb574743b3a707b47cd0312,
     type: 3}
-  SimultaneousSimulations: 20
+  SimultaneousSimulations: 10
   RandomSeed: 50
   randomRedPlayerPosition: 0
   randomBluePlayerPosition: 0
@@ -392,9 +392,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mutationMethod: 0
   selectionMethod: 0
-  populationSize: 20
+  populationSize: 10
   NNTopology: 0c0000000300000002000000
-  numberOfGenerations: 2
+  numberOfGenerations: 10
   seedPopulationFromFile: 0
   pathToFileRed: 
   pathToFileBlue: 
@@ -404,8 +404,8 @@ MonoBehaviour:
   tournamentSize: 10
   Mean: 0
   Stdev: 0.5
-  mutationProbabilityRedPopulation: 0.5
-  crossoverProbabilityRedPopulation: 0.5
+  mutationProbabilityRedPopulation: 0.3
+  crossoverProbabilityRedPopulation: 0.3
   elitistRed: 0
   mutationProbabilityBluePopulation: 0.9
   crossoverProbabilityBluePopulation: 0.9
