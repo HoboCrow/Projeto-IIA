@@ -33,7 +33,7 @@ public class D31NeuralControler : MonoBehaviour
     public float maxSpeed = 0.0f;
     public int hitTheBall;
     public int hitTheWall;
-    
+
 
 
 
@@ -66,7 +66,7 @@ public class D31NeuralControler : MonoBehaviour
 
         startPos = agent.transform.localPosition;
         previousPos = startPos;
-        
+
         if (GameFieldDebugMode && this.neuralController.weights == null)
         {
             Debug.Log("creating nn..!! ONLY IN GameFieldDebug SCENE THIS SHOULD BE USED!");
@@ -185,7 +185,7 @@ public class D31NeuralControler : MonoBehaviour
         previousPos = agent.transform.localPosition;
         hitTheBall = agent.hitTheBall;
         hitTheWall = agent.hitTheWall;
-        
+
         currentSpeed = currentDistance / Time.deltaTime;
         maxSpeed = (currentSpeed > maxSpeed ? currentSpeed : maxSpeed);
 
@@ -230,7 +230,7 @@ public class D31NeuralControler : MonoBehaviour
     {
         // You can modify this to change the length of the simulation of an individual before evaluating it.
         // (a variavel maxSimulTime está por defeito a 30 segundos)
-        //this.maxSimulTime = 30; // Descomentem e alterem aqui valor do maxSimultime se necessário.
+        this.maxSimulTime = 15; // Descomentem e alterem aqui valor do maxSimultime se necessário.
         return simulationTime > this.maxSimulTime;
     }
 
@@ -246,7 +246,14 @@ public class D31NeuralControler : MonoBehaviour
     {
         // Fitness function for the Red player. The code to attribute fitness to individuals should be written here. 
         //* YOUR CODE HERE*//
-        float fitness = distanceTravelled;
+
+        float distToBallFactor = 1 - distanceToBall.Average();
+        int hitTheBallFactor = hitTheBall > 0 ? 1 : 0;
+        float distBallToAdvGoalFactor = 1 - distancefromBallToAdversaryGoal.Average();
+        float goalsScoredFactor = 2 * GoalsOnAdversaryGoal;
+        float goalsSufferedFactor = -1 * GoalsOnMyGoal;
+
+        float fitness = distToBallFactor + hitTheBallFactor + goalsScoredFactor + goalsSufferedFactor + distBallToAdvGoalFactor;
         return fitness;
     }
 
